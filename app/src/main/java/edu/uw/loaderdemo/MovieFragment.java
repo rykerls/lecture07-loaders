@@ -106,7 +106,9 @@ public class MovieFragment extends Fragment {
                         String title = response.getString("Title");
                         String year = response.getString("Year");
                         movieText.setText(title+" ("+year+")");
+                        movieText.setContentDescription(title + ", " + year);
                         fetchMoviePoster(response.getString("Poster"));
+                        movieImage.setContentDescription("poster of " + title + ", " + year);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
